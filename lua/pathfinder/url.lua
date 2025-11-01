@@ -155,7 +155,7 @@ local function try_open_urls(urls, on_none)
 			done = true
 			vim.schedule(function()
 				notify.info('Opening "' .. url .. '"')
-				vim.ui.open(url)
+				vim.ui.open(url, config.config.url_open_opt or {})
 			end)
 		elseif pending == 0 then
 			vim.schedule(on_none)
